@@ -2,6 +2,7 @@
 require_once 'partials/header.php';
 ?>
 <h1 class="text-center mt-5">Sweet Home's</h1>
+<h2 class="text-center mt-5">your new home's déco</h2>
 <section class="container mt-5">
     <div class="row">
         <?php foreach ($posts as $post) { ?>
@@ -14,6 +15,7 @@ require_once 'partials/header.php';
                         <?php echo $post->getTitle() ?>
                     </h5>
                     <a href="single.php?id=<?php echo $post->getId_post() ?>" class="btn btn-primary"> Voir plus !</a>
+                
                 </div>
             </div>
 
