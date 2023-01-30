@@ -14,6 +14,7 @@ ul {
 
 li {
     list-style: none;
+    font-family: 'Quicksand', sans-serif;
 }
 
 button {
@@ -21,3 +22,15 @@ button {
     align-items: center;
 }
 
+h1 {
+    font-size: 3.6em;
+
+}
+
+h5 {
+    font-family: 'Quicksand', sans-serif;
+}
+
+p {
+    font-family: 'Quicksand', sans-serif;
+}

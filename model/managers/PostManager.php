@@ -2,6 +2,9 @@
 
 require_once './model/DBConnect.php';
 require_once './model/classes/Post.php';
+
+// class des fonctions pour la table POST
+
 class PostManager
 {
 
@@ -16,6 +19,8 @@ class PostManager
         $posts = $stmt->fetchAll(PDO::FETCH_CLASS, 'Post');
         return $posts;
     }
+
+    // fonction pour selectionner le pseudo
     public static function getPseudo()
     {
         $dbh = dbconnect();
@@ -39,7 +44,7 @@ class PostManager
         $post = $stmt->fetch();
         return $post;
     }
-    //fonction pour selectionner un post OU L'ID DE LA CATEGORIE EST EGAL A L'ID D'UN POST 
+    //fonction pour selectionner un post OU L'ID DE LA CATEGORIE EST EGAL A L'ID D'UN POST en fonction de l'id passé en parametre
     public static function getPostsByCategoryId($id)
     {
         $dbh = dbconnect();
@@ -51,7 +56,7 @@ class PostManager
         return $posts;
     }
 
-    //fonction pour SELECTIONNER UN POST OU L'ID de l'utilisateur EST EGALE à l'ID D'UN POST
+    //fonction pour SELECTIONNER UN POST OU L'ID de l'utilisateur EST EGALE à l'ID D'UN POST en fonction de l'id passé en parametre
     public static function getPostsByUserId($id) {
         $dbh = dbconnect();
         $query = "SELECT * FROM post JOIN user ON user.id_user = post.id_user WHERE post.id_user = :id";
@@ -96,11 +101,20 @@ class PostManager
         $stmt->bindParam(':id_user', $userId);
         $stmt->execute();
     }
-// fonction pour supprimer un article de la table post 
+/* fonction pour supprimer un post ou l'id category est égal à l'id passé en parametre */
+    public static function deletePostCategoriesByPostId($id){
+        $dbh = dbconnect();
+        $query = "DELETE FROM post_category WHERE post_category.id_post = :id";
+        $stmt = $dbh->prepare($query);
+        $stmt->bindParam(':id', $id);
+        $stmt->execute();
+    }
+// fonction pour supprimer un article de la table post si l'id passé en parametre et égal à celui du post
     public static function deletePost($id) {
         $dbh = dbconnect();
-        $query = "DELETE FROM post WHERE";
+        $query = "DELETE FROM post WHERE post.id_post = :id";
         $stmt = $dbh->prepare($query);
+        $stmt->bindParam(':id', $id);
         $stmt->execute();
         
       
