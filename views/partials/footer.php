@@ -5,12 +5,12 @@
       <a href="/" class="mb-3 me-2 mb-md-0 text-muted text-decoration-none lh-1">
         <svg class="bi" width="30" height="24"><use xlink:href="#bootstrap"/></svg>
       </a>
-      <span class="mb-3 mb-md-0 text-muted">&copy; 2022 Company, Inc</span>
+      <span class="mb-3 mb-md-0 text-muted">&copy; 2022 Roxane_Breton_Dev_Web</span>
     </div>
 
     <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
-      <li class="ms-3" style="color: grey;"><i class="bi bi-facebook"></i></li>
-      <li class="ms-3"style="color: grey;"><i class="bi bi-instagram"></i></li>
+      <a href="http://www.linkedin.com/in/roxane-breton34"><li class="ms-3" style="color: grey;"><i class="bi bi-linkedin"></i></li></a>
+      <a href="https://github.com/roxane-julie"><li class="ms-3"style="color: grey;"><i class="bi bi-github"></i></li></a>
       <li class="ms-3"style="color: grey;"><i class="bi bi-twitter"></i></i></li>
     </ul>
   </footer>
@@ -20,6 +20,9 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
     crossorigin="anonymous"></script>
+
+    <script src="jquery.js"></script>
+    <script src="script.js"></script>
 
 </body>
 

@@ -2,11 +2,22 @@
 require_once './model/DBConnect.php';
 require_once './model/classes/User.php';
 
+
 class UserManager {
 
     public static function getUserInfos($id){ // fonction permettant de récupérer toutes les infos de l'user grace a son id, s'il correspond à l'id passé en parametre
         $dbh = dbconnect();
         $query = "SELECT * FROM user WHERE id_user=:id";
+        $stmt = $dbh->prepare($query);
+        $stmt->bindParam(':id', $id);
+        $stmt->execute();
+        $stmt->setFetchMode(PDO::FETCH_CLASS, 'User');
+        $user = $stmt->fetch();
+        return $user;
+    }
+    public static function getUserPseudo($id){ // fonction permettant de récupérer toutes les infos de l'user grace a son id, s'il correspond à l'id passé en parametre
+        $dbh = dbconnect();
+        $query = "SELECT pseudo FROM user WHERE id_user=:id";
         $stmt = $dbh->prepare($query);
         $stmt->bindParam(':id', $id);
         $stmt->execute();
@@ -25,6 +36,16 @@ class UserManager {
         $user = $stmt->fetch();
         return $user;
 
+    }
+    public static function getCommentAuthorByCommentId($id){
+        $dbh = dbconnect();
+        $query = "SELECT user.id_user, pseudo, mail FROM comment JOIN user ON comment.id_user = user.id_user WHERE comment.id_comment = :id";
+        $stmt = $dbh->prepare($query);
+        $stmt->bindParam(':id', $id);
+        $stmt->execute();
+        $stmt->setFetchMode(PDO::FETCH_CLASS, 'User');
+        $user = $stmt->fetch();
+        return $user;
     }
 
     public static function addUser($pseudo, $mail, $mdp){ // fonction pour inserer un nouvel utilisateur pseudo, mail, mdp depuis ceux passés en parametre

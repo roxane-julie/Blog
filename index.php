@@ -1,5 +1,6 @@
 <?php
 require_once 'model/managers/PostManager.php';
+
 //ici on mettra toute la logique du code
 
 if (isset($_GET['message']) && !empty($_GET['message'])){?>

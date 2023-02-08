@@ -17,20 +17,174 @@ li {
     font-family: 'Quicksand', sans-serif;
 }
 
-button {
-    display: flex;
-    align-items: center;
-}
-
 h1 {
     font-size: 3.6em;
 
+}
+
+.ret_del {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+}
+
+button {
+    width: 150px;
+    height: 50px;
+    text-transform: uppercase;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    background: #ebc9ae;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.15);
+    background: #dba477;
+}
+
+button,
+button span {
+    transition: 300ms;
+}
+
+/* BOUTON 1 */
+button .text {
+    transform: translateX(35px);
+    color: white;
+    font-family: 'Quicksand', sans-serif;
+
+}
+
+button .icon {
+    position: absolute;
+    border-left: 1px solid #dba477;
+    transform: translateX(110px);
+    height: 40px;
+    width: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+button svg {
+    width: 15px;
+    fill: #eee;
+}
+
+button:hover {
+    background: #dba477;
+}
+
+button:hover .text {
+    color: transparent;
+}
+
+button:hover .icon {
+    width: 150px;
+    border-left: none;
+    transform: translateX(0);
+}
+
+button:focus {
+    outline: none;
+}
+
+button:active .icon svg {
+    transform: scale(0.8);
+}
+
+/* FIN DU BOUTON 1*/
+
+
+
+/*BOUTON 2*/
+
+#btn1 {
+    position: relative;
+    font-size: 14px;
+    padding: 0 3em;
+    border: none;
+    background-color: #dba477;
+    color: #fff;
+    text-transform: uppercase;
+    overflow: hidden;
+    border-radius: 5px
+}
+
+#btn1::before {
+    content: '';
+    display: block;
+    position: absolute;
+    z-index: 0;
+    bottom: 0;
+    left: 0;
+    height: 0px;
+    width: 100%;
+    background: #dba477(196, 27, 84);
+    background: linear-gradient(90deg, #d4884a(196, 27, 84, 1) 20%, #d4884a(124, 7, 46, 1) 100%);
+    transition: 0.2s;
+}
+
+#btn1.label {
+    position: relative;
+}
+
+#btn1.icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 3em;
+    width: 3em;
+    position: absolute;
+    top: 3em;
+    right: 0;
+    opacity: 0;
+    transition: 0.4s;
+}
+
+#btn1:hover::before {
+    height: 100%;
+}
+
+#btn1:hover .icon {
+    top: 0;
+    opacity: 1;
+}
+
+/* FIN DU BOUTON 2*/
+
+
+
+a {
+    text-decoration: none;
+}
+
+h2 {
+    text-align: center;
+    margin-top: 3%;
+    font-family: 'Fredericka the Great', cursive !important;
 }
 
 h5 {
     font-family: 'Quicksand', sans-serif;
 }
 
+
 p {
     font-family: 'Quicksand', sans-serif;
+}
+
+
+@media screen and (max-width: 767px) {
+    .image_reduite {
+        width: 80% !important;
+        height: 80%;
+    }
+
+    form {
+        width: 70%;
+        margin: 0 auto;
+    }
 }

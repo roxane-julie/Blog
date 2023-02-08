@@ -1,4 +1,6 @@
-<?php session_start();
+<?php 
+require_once 'session_start.php';
+
 unset($_SESSION['user']);
 header('location:index.php');
 

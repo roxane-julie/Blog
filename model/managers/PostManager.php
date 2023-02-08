@@ -21,16 +21,6 @@ class PostManager
     }
 
     // fonction pour selectionner le pseudo
-    public static function getPseudo()
-    {
-        $dbh = dbconnect();
-        $query = "SELECT pseudo FROM post";
-        $stmt = $dbh->prepare($query);
-        $stmt->execute();
-        $posts = $stmt->fetch(PDO::FETCH_CLASS);
-        return $posts;
-    }
-
 
     // fonction pour SELECTIONNER UN POST PAR SON ID
     public static function getPostById($id)

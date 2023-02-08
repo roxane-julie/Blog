@@ -1,5 +1,6 @@
 <?php
-session_start();
+require_once 'session_start.php';
+
 require_once 'model/managers/PostManager.php';
 require_once 'model/managers/CategoryManager.php';
 
@@ -27,6 +28,7 @@ if(isset($_SESSION['user'])){// je vérifie que j'ai un user
         foreach($postCategories as $cat){
             PostManager::addPostCategories($newPostId, $cat);
         }
+        header('location: index.php?status="succes"&message="Hello '.$_SESSION['user']['pseudo']." !"."");
 
 
     }

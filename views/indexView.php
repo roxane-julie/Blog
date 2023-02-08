@@ -1,5 +1,6 @@
 <?php
 require_once 'partials/header.php';
+require_once 'session_start.php';
 ?>
 
 <h1 class="text-center mt-5" style="font-family:Fredericka the Great, cursive">Cosy Corner</h1>
@@ -7,7 +8,7 @@ require_once 'partials/header.php';
     <div class="row d-flex justify-content-center">
         <?php foreach ($posts as $post) { ?>
 
-            <div class="card col-12 col-md-4 col-lg-2 m-4">
+            <div class="card col-12 col-md-4 col-lg-2 m-4 image_reduite ">
                 <!-- <img src="./asset/img_chambre1.jpg" class="card-img-top" alt=""> -->
                 <img src="asset/img/<?= $post->getPicture()?>" alt=""class="card-img-top rounded d-block mx-auto mt-3 w-100 h-100 shadow">
                 <div class="card-body">

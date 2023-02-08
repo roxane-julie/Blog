@@ -17,8 +17,19 @@ class Post
 
     private $id_user;
 
-// => Les fonctions suivantes vont donc nous permettrent d'acceder et de modifier les propriétés du dessus
+    private $pseudo;
 
+// => Les fonctions suivantes vont donc nous permettrent d'acceder et de modifier les propriétés du dessus
+    public function getPseudo()
+    {
+        return $this->pseudo;
+    }
+
+    public function setPseudo($pseudo):self
+    {
+        $this->pseudo = $pseudo;
+        return $this;
+    }
 
     public function getId_post() // renvoie la valeur de la propriété id_post
     {
@@ -74,9 +85,11 @@ class Post
         return $this->id_user;
     }
 
-    public function setId_user($id_user):self // permet de modifier la valeur de id_user
+    public function setId_user($id_user): self // permet de modifier la valeur de id_user
+
     {
         $this->id_user = $id_user;
         return $this;
-   }
+    }
+
 }
