@@ -49,7 +49,7 @@ require_once 'partials/header.php';
 <!-- INPUT COMMENTAIRE !-->
 <?php if (isset($_SESSION['user'])) { ?>
         <div id="addcomment">
-          <form action="" method="post">
+          <form action="" method="post"id="formcomment">
             <div class="mb-3">
               <label for="InputContent" class="form-label">Commentaires </label>
               <textarea class="form-control" id="InputComment" name="comment"></textarea>

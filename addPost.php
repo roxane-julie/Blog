@@ -1,7 +1,7 @@
 <?php
 require_once 'session_start.php';
 
-require_once 'model/managers/PostManager.php';
+require_once '(model/managers/PostManager.php';
 require_once 'model/managers/CategoryManager.php';
 
 
